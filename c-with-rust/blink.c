@@ -51,6 +51,9 @@ int c_main() {
         gpio_put(LED_PIN, 0);
         sleep_ms(sleep);
         sleep = add_half(sleep);
+        if(sleep > 2000) {
+            reset_usb_boot(LED_PIN, 0);
+        }
     }
 }
 

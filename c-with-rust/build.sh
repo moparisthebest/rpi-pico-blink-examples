@@ -5,9 +5,6 @@ set -euxo pipefail
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-cd "$SCRIPT_DIR"/rblink
-CARGO_TARGET_DIR=/tmp/cargo-target cargo build --release --target thumbv6m-none-eabi
-
 mkdir -p /tmp/8
 cd /tmp/8
 

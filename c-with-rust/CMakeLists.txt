@@ -15,11 +15,14 @@ add_executable(
         blink.c
         )
 
+add_subdirectory(rblink)
+add_dependencies(blink rblink)
+
 # pull in common dependencies
 target_link_libraries(
 	blink 
 	pico_stdlib
-	/tmp/cargo-target/thumbv6m-none-eabi/release/librblink.a
+	${CMAKE_CURRENT_BINARY_DIR}/rblink/librblink.a
 	)
 
 # create map/bin/hex file etc.
